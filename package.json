@@ -1,51 +1,18 @@
 {
-  "_from": "node-sort-algorithms",
-  "_id": "node-sort-algorithms@1.0.1",
-  "_inBundle": false,
-  "_integrity": "sha1-kBCcZfJK81U3pJaeRiOZOpsC9Lc=",
-  "_location": "/node-sort-algorithms",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "node-sort-algorithms",
-    "name": "node-sort-algorithms",
-    "escapedName": "node-sort-algorithms",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/node-sort-algorithms/-/node-sort-algorithms-1.0.1.tgz",
-  "_shasum": "90109c65f24af35537a4969e4623993a9b02f4b7",
-  "_spec": "node-sort-algorithms",
-  "_where": "C:\\inetpub\\nodejs",
-  "author": {
-    "name": "Amir Hatami",
-    "email": "am.hatami@gmail.com"
-  },
-  "bugs": {
-    "url": "https://github.com/pooyahatami/Algorithm-Sort-algorithms/issues"
-  },
-  "bundleDependencies": false,
-  "dependencies": {},
-  "deprecated": false,
-  "description": "Also known as Gravity sort, this algorithm was inspired from natural phenomenons and was designed keeping in mind objects(or algorithmss) falling under the influence of gravity.",
-  "devDependencies": {
-    "tap": "~0.4.1"
-  },
-  "homepage": "https://github.com/pooyahatami/Algorithm-Sort-algorithms#readme",
-  "license": "MIT",
-  "main": "node-sort-algorithms.js",
   "name": "node-sort-algorithms",
+  "description": "A sorting library for Node.js &amp; javascript made based on well kown algorithmes included : Bead Sort , Gravity Sort , Bucket Sort , Bin Sort ,  Counting Sort , Insertion Sort , Merge Sort , Radix Sort",
+  "version": "1.0.2",
   "repository": {
-    "url": "git+https://github.com/pooyahatami/Algorithm-Sort-algorithms.git"
+    "url": "https://github.com/amhatami/Node-Sort-Algorithms"
   },
+  "main": "node-sort-algorithms.js",
   "scripts": {
     "test": "test-Cases/*.js"
   },
-  "version": "1.0.1"
+  "author": "Amir Hatami <am.hatami@gmail.com>",
+  "dependencies": {},
+  "devDependencies": {
+    "tap": "~0.4.1"
+  },
+  "license": "MIT"
 }
