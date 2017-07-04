@@ -41,6 +41,7 @@ module.exports = function(inputArray,displayStatus,callback) {
         		  return insertionSortlocal(inputArray);
 			},
             radixSort: function (inputArray,base) {
+			base = typeof base !== 'undefined' ? base : 10;
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with radixSort on Baase ",base);
         		  return radixSortlocal(inputArray,code[2],base);
 			},
