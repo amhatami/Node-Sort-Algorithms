@@ -8,16 +8,25 @@ Sorting algorithm is an algorithm that puts elements of a list in a certain orde
 The output is in nondecreasing order (each element is no smaller than the previous element according to the desired total order);
 The output is a permutation (reordering) of the input.
 
-```javascript
- * Sorting Algorithm ! 
- * Class Sorting Algorithm
- * Data structure	Array
- *   Note: the output must satisfy two conditions:
- *        The output is in nondecreasing order (each element is no smaller than the previous element according to the desired total order);
- *        The output is a permutation (reordering) of the input.
- *
- * Author: Amir Hatami
- ```
+ 	Sorting Algorithm ! 
+ 	Class Sorting Algorithm
+ 	Data structure	Array
+ 	     Bead Sort 
+ 	     Gravity Sort 
+ 	     Bucket Sort 
+ 	     Bin Sort 
+ 	     Counting Sort
+ 	     Insertion Sort
+ 	     Merge Sort
+ 	     Radix Sort
+ 	    
+ 	   Note: the output must satisfy two conditions:
+ 	        The output is in nondecreasing order (each element is no smaller
+ 	             than the previous element according to the desired total order);
+ 	        The output is a permutation (reordering) of the input.
+ 	
+ 	 Author: Amir Hatami
+
 ## Installation
 
 If you are using a browser, you can download **node-sort-algorithms.js** from GitHub or just bellow hotlink to it:
