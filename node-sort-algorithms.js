@@ -1,18 +1,15 @@
 /*
- * Bead sort algorithm !
- * Class	Sorting algorithm
- * Data structure	Array
- * Worst-case performance	О(s) comparisons, S is the sum of the input integers
- * Best-case performance	O(1) comparisons, O(1) swaps
- * Average performance	О(n) comparisons, swaps
- * Worst-case space complexity
- *   where n is the size of the input array.
- *   ans S S is the sum of the input integers.
- *   Note: The algorithm’s run–time complexity ranges from O(1) to O(S) (S is
- *         the sum of the input integers) depending on the user’s perspective.
- *        Finally, three possible implementations are suggested.
- *
- * Author: Pooya Hatami
+ * Class Sorting algorithms
+ *      Bead Sort 
+ *      Gravity Sort 
+ *      Bucket Sort 
+ *      Bin Sort 
+ *      Counting Sort
+ *      Insertion Sort
+ *      Merge Sort
+ *      Radix Sort
+ *    
+ * Author: Amir Hatami
  */
  
 var displaymode = "No"; // by defualt No details display 
