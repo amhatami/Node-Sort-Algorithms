@@ -1,21 +1,18 @@
- /*
- * Bead sort algorithm !
- * Class	Sorting algorithm
- * Data structure	Array
- * Worst-case performance	О(s) comparisons, S is the sum of the input integers
- * Best-case performance	O(1) comparisons, O(1) swaps
- * Average performance	О(n) comparisons, swaps
- * Worst-case space complexity
- *   where n is the size of the input array.
- *   ans S S is the sum of the input integers.
- *   Note: The algorithm’s run–time complexity ranges from O(1) to O(S) (S is
- *         the sum of the input integers) depending on the user’s perspective.
- *        Finally, three possible implementations are suggested.
- *
- * Author: Pooya Hatami
+/*
+ * Class Sorting algorithms
+ *      Bead Sort 
+ *      Gravity Sort 
+ *      Bucket Sort 
+ *      Bin Sort 
+ *      Counting Sort
+ *      Insertion Sort
+ *      Merge Sort
+ *      Radix Sort
+ *    
+ * Author: Amir Hatami
  */
 
-var nodesort = require('./node-sort-bead');
+var nodesort = require('./node-sort-algorithms');
 var displaymode = "No"; //"Yes";  // "Yes" for more details of algorithm progress 
 var base = 10;
 
@@ -43,7 +40,7 @@ var arrin15 = [7,2,22,77,37,15,10770,740,70,75,04,5,107,75,52,12,50,177,71,207];
 var arrin16 = [7,2,3,15,19,12,10,4,8,11,007,5,00017,6,9,12,1,13,18,20];   // smal numbers for bead sort
 
 
-function solveSorting(inputArray) {
+function solveSorting(inputArray,sortingMethod) {
     var arr_original = inputArray.toString() ;
     var sortedArray = inputArray;
 
@@ -52,9 +49,45 @@ function solveSorting(inputArray) {
 	         console.log(err);
 	                }
 	      else {
-           //var result = sortRef.beadSort(inputArray);
-		   var result = sortRef.gravitySort(inputArray);
-	         console.log("Success attempt to sort array \r\n \t ["+arr_original+" ] \r\n and result is : \r\n \t [ "
+			  switch(sortingMethod) {
+					case "mergeSort":
+						var result = sortRef.mergeSort(inputArray);
+						sortMehodmessage = "mergeSort";
+						break;
+					case "insertionSort":
+						var result = sortRef.insertionSort(inputArray);
+						sortMehodmessage = "Insertion Sort";
+						break;
+					case "radixSort":
+						var result = sortRef.radixSort(inputArray);
+						sortMehodmessage = "Radix Sort";
+						break;
+					case "countingSort":
+						var result = sortRef.countingSort(inputArray);
+						sortMehodmessage = "Counting Sort";
+						break;
+					case "bucketSort":
+						var result = sortRef.bucketSort(inputArray);
+						sortMehodmessage = "Bucket Sort";
+						break;
+					case "binSort":
+						var result = sortRef.binSort(inputArray);
+						sortMehodmessage = "Bin Sort";
+						break;
+					case "beadSort":
+						var result = sortRef.beadSort(inputArray);
+						sortMehodmessage = "Bead Sort";
+						break;
+					case "gravitySort":
+						var result = sortRef.gravitySort(inputArray);
+						sortMehodmessage = "Gravity Sort";
+						break;
+					default:
+						var result = inputArray.sort();
+						sortMehodmessage = "defualt javascript Sort";
+				}
+
+	         console.log("Success attempt to sort below array by "+sortMehodmessage+" : \r\n \t ["+arr_original+" ] \r\n and result is : \r\n \t [ "
                 + result + " ]" );
   
 	      sortedArray = result;
@@ -65,11 +98,12 @@ function solveSorting(inputArray) {
     return sortedArray;
 };
 
-solveSorting(arrin16);
-solveSorting(arrin01);
-solveSorting(arrin00);
-solveSorting(arrin03);
-solveSorting(arrin11);
-solveSorting(arrin12);
-solveSorting(arrin14);
-solveSorting(arrin15);
+solveSorting(arrin16,'beadSort');
+solveSorting(arrin01,'radixSort');
+solveSorting(arrin00,'mergeSort');
+solveSorting(arrin03,'insertionSort');
+solveSorting(arrin03,'countingSort');
+solveSorting(arrin11,'beadSort');
+solveSorting(arrin12,'binSort');
+solveSorting(arrin14,'beadSort');
+solveSorting(arrin15,'gravitySort');
