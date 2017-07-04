@@ -104,6 +104,7 @@ solveSorting(arrin00,'mergeSort');
 solveSorting(arrin03,'insertionSort');
 solveSorting(arrin03,'countingSort');
 solveSorting(arrin11,'beadSort');
-solveSorting(arrin12,'binSort');
+solveSorting(arrin09,'binSort');
+solveSorting(arrin10,'bucketSort');
 solveSorting(arrin14,'beadSort');
 solveSorting(arrin15,'gravitySort');
