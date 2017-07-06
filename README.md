@@ -35,14 +35,11 @@ The output is a permutation (reordering) of the input.
 
       $ npm install node-sort-algorithms
       
-  Or...
-
   Install via git clone:
 
       $ git clone https://github.com/amhatami/Node-Sort-Algorithms node-sort-algorithms
       $ cd node-sort-algorithms
       $ npm install
- Or...
  
   Using directly via a browser, You can download **node-sort-algorithms.js** from GitHub or just bellow hotlink to it:
 
@@ -60,19 +57,6 @@ The output is a permutation (reordering) of the input.
   * [Node.js](http://nodejs.org/) v0.6+
 
 
-## Installation
-
-If you are using a browser, you can download **node-sort-algorithms.js** from GitHub or just bellow hotlink to it:
-
-```js
-<script src="https://raw.githubusercontent.com/amhatami/Node-Sort-Algorithms/master/node-sort-algorithms.js"></script>
-```
-
-If you are using node, you can install **node-sort-algorithms** with npm.
-
-```
-npm install node-sort-algorithms
-```
 
 ## Usage :
 ```js
