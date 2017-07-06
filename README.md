@@ -78,7 +78,7 @@ nodesort(inputArray, displaymode, function(err,sortRef) {
 ## Ruls :
  * Depended on the Sort algorithm You choose imput Array could be integers, float,decima,ocat,hex or binary.
  * Array's element could be negative for only below Algorithms;
- *   Insertion Sort , Merge Sort , 3 Way Merge Sort , Quick Sort , 3 Way Quick Sort and etc.
+   -- Insertion Sort , Merge Sort , 3 Way Merge Sort , Quick Sort , 3 Way Quick Sort and etc.
  * Returns error mesage if not found valid input.
  * Turn On details of Algorithms progress useing : displaymode = "Yes"  
  ```js
