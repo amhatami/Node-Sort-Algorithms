@@ -1,7 +1,7 @@
 {
   "name": "node-sort-algorithms",
   "description": "A sorting library for Node.js &amp; javascript made based on well kown algorithmes included : Bead Sort , Gravity Sort , Bucket Sort , Bin Sort ,  Counting Sort , Insertion Sort , Merge Sort , Radix Sort",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "url": "https://github.com/amhatami/Node-Sort-Algorithms"
   },
