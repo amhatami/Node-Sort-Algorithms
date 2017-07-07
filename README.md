@@ -50,7 +50,7 @@ The output is a permutation (reordering) of the input.
 
   You can install node-sort and its dependencies with npm: 
     
-      $ npm install node-sort
+      $ npm install node-sort-algorithms
   
   Dependencies
   
@@ -60,7 +60,7 @@ The output is a permutation (reordering) of the input.
 
 ## Usage :
 ```js
-var nodesort = require('./node-sort-bead');
+var nodesort = require('./node-sort-algorithms');
 var displaymode = "No"; //"Yes";  // "Yes" for more details of algorithm progress 
 ...
 nodesort(inputArray, displaymode, function(err,sortRef) {
@@ -76,7 +76,7 @@ nodesort(inputArray, displaymode, function(err,sortRef) {
 ```
 
 ## Ruls :
- * Depended on the Sort algorithm You choose imput Array could be integers, float,decima,ocat,hex or binary.
+ * Depended on the Sort algorithms, input Array could be integers, float, decima, ocat, hex or binary.
  * Array's element could be negative for only these Algorithms; Insertion Sort , Merge Sort , 3 Way Merge Sort , Quick Sort , 3 Way Quick Sort and etc.
  * Returns error mesage if not found valid input.
  * Turn On details of Algorithms progress useing : displaymode = "Yes"  
@@ -230,7 +230,7 @@ Coming soon :) !
 
 ## LICENSE
 
-  node-sort: Copyright (c) 2016 Amir Hatami
+  node-sort-algorithms: Copyright (c) 2016 Amir Hatami
   
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
