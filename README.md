@@ -86,7 +86,7 @@ nodesort(inputArray, displaymode, function(err,sortRef) {
 
 ## Example
 
-  Demos of the node-sort module are located in: [./examples](https://github.com/amhatami/Node-Sort-Algorithms/tree/master/examples)
+  Demos of the node-sort module are located in: [./test-Cases](https://github.com/amhatami/Node-Sort-Algorithms/tree/master/test-Cases)
 
 ```js
 var nodesort = require('./node-sort-algorithms');
