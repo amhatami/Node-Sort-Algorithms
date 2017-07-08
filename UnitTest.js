@@ -14,7 +14,7 @@
 
 var nodesort = require('./node-sort-algorithms');
 var displaymode = "No"; //"Yes";  // "Yes" for more details of algorithm progress 
-var base = 10;
+var base = 2;
 
 var arrin00 = [20, 8 , -11, 12, 22 , 9 , 10 ];
 var arrin01 = [20, 8 , 48, 120, 220 , 390 , 1000 ];
@@ -59,7 +59,7 @@ function solveSorting(inputArray,sortingMethod) {
 						sortMehodmessage = "Insertion Sort";
 						break;
 					case "radixSort":
-						var result = sortRef.radixSort(inputArray);
+						var result = sortRef.radixSort(inputArray,base);   // Base defualt 10 
 						sortMehodmessage = "Radix Sort";
 						break;
 					case "countingSort":
@@ -99,12 +99,12 @@ function solveSorting(inputArray,sortingMethod) {
 };
 
 solveSorting(arrin16,'beadSort');
-solveSorting(arrin01,'radixSort');
-solveSorting(arrin00,'mergeSort');
-solveSorting(arrin03,'insertionSort');
+solveSorting(arrin14,'radixSort');
+solveSorting(arrin00,'bucketSort');
+solveSorting(arrin03,'binSort');  //
 solveSorting(arrin03,'countingSort');
 solveSorting(arrin11,'beadSort');
-solveSorting(arrin09,'binSort');
-solveSorting(arrin10,'bucketSort');
-solveSorting(arrin14,'beadSort');
+solveSorting(arrin09,'insertionSort');
+solveSorting(arrin10,'mergeSort');
+solveSorting(arrin01,'beadSort');
 solveSorting(arrin15,'gravitySort');
