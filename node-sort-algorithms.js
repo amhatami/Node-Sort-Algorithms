@@ -45,15 +45,15 @@ module.exports = function(inputArray,displayStatus,callback) {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with radixSort on Baase ",base);
         		  return radixSortlocal(inputArray,code[2],base);
 			},
-            countingSort: function (inputArray,base) {
+            countingSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with countingSort");
         		  return countingSortMain(inputArray,code[0]);
 			},
-            beadSort: function (inputArray,base) {
+            beadSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with beadSort");
         		  return beadSortlocal(inputArray,code['length']);   // code[2] inputArray.lenght  code[0] maximum 
 			},
-            gravitySort: function (inputArray,base) {
+            gravitySort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with beadSort or gravitySort");
         		  return beadSortlocal(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
@@ -194,7 +194,7 @@ bs = function(input,code)
     for (i=0; i<ibucket; i++) {
          if (displaymode == "Yes") console.log("bucket "+ i +" befor sort : "+b[i]);
          //b[i].sort(sortNumber);
-         b[i] = is(b[i]);   // sorting each bucket with insertionSort 
+         b[i] = insertionSortlocal(b[i]);   // sorting each bucket with insertionSort 
          if (displaymode == "Yes") console.log("after sort : "+b[i]);
     }
     if (displaymode == "Yes") console.log("\nfull buckets after sort :\n", b);
