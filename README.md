@@ -194,6 +194,7 @@ solveSorting(arrin15,'gravitySort');
 
   * **array** - array to be sorted
   * **displaymode** - for more details of algorithm progress 
+  * **base** - for positional numeral system with a radix, or base  e.g.(2 Binary - 8 Octal - 10 Decimal - 16 Hexadecimal - 60 	Sexagesimal etc. ) [List of numeral systems](https://en.wikipedia.org/wiki/List_of_numeral_systems) 
 
 
 **Functions**
@@ -202,7 +203,7 @@ solveSorting(arrin15,'gravitySort');
 
   * **Insertion Sort - .insertionSort( array )**
 
-  * **Radix Sort - .radixSort( array )**
+  * **Radix Sort - .radixSort( array , base )**
 
   * **Counting Sort - .countingSort( array )**
 
