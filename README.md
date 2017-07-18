@@ -252,3 +252,13 @@ Coming soon :) !
   OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
   WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# Refrences
+
+ * https://en.wikipedia.org/wiki/Sorting_algorithm
+ * http://algs4.cs.princeton.edu/20sorting/
+ * https://www.toptal.com/developers/sorting-algorithms
+ * http://www.geeksforgeeks.org/sorting-algorithms/
+ * https://www.hackerrank.com/domains/algorithms/arrays-and-sorting
+ * https://leetcode.com/problemset/algorithms/
+ * https://www.topcoder.com/community/data-science/data-science-tutorials/sorting/
+ 
