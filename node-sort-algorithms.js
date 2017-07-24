@@ -40,82 +40,93 @@ module.exports = function(inputArray,displayStatus,callback) {
             bucketSort: function () {
               if (code[3] < 0 ) throw new Error("Negative element are not accepted ! for Bucket Sort.");
               if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with bucketSort");
-        		  if (code[0]<=0) return beadSortLocalfractions(inputArray,10,code[2]);
-              else return beadSortLocal(inputArray,code);
+        		  if (code[0]<=0) return beadSortLocalfractions(inputArray.slice(0),10,code[2]);
+              else return beadSortLocalBucket(inputArray.slice(0),code);
 			},
 			      binSort:function () {
               if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with bucketSort which is the same as binSort!");
-        		  return beadSortLocal(inputArray,code);
+        		  return beadSortLocalBucket(inputArray.slice(0),code);
 			},
             mergeSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with mergeSort");
-        		  return mergeSortLocal(inputArray,0,code[2]-1);
+        		  return mergeSortLocal(inputArray.slice(0),0,code['length']-1);
 			},
             mergeSort3Way: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with 3 Way mergeSort");
-        		  return mergeSort3WayLocal(inputArray);
+        		  return mergeSort3WayLocal(inputArray.slice(0));
+			},
+            mergeSortKWay: function (inputArray,kWay) {
+            if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with "+kWay+" Way mergeSort");
+              if  ( isOdd(kWay) ) return mergeSortLocal(inputArray.slice(0),0,code['length']-1);
+              else  return mergeSort3WayLocal(inputArray.slice(0));
 			},
             quickSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with QuickSort");
-        		  return quickSortlocal(inputArray,0,code[2]-1);
+        		  return quickSortlocal(inputArray.slice(0),0,code['length']-1);
 			},
             quickSort3Way: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with 3 way QuickSort");
-        		  return quickSort3Waylocal(inputArray,0,code[2]-1);
+        		  return quickSort3Waylocal(inputArray.slice(0),0,code['length']-1);
+			},
+            quickSortKWay: function (inputArray,kWay) {
+            if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with "+kWay+" way QuickSort");
+            if  ( isOdd(kWay) ) return quickSortlocal(inputArray,0,code['length']-1);
+            else  return quickSort3Waylocal(inputArray.slice(0),0,code['length']-1);
 			},
             insertionSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with insertionSort");
-        		  return insertionSortlocal(inputArray);
+        		  return insertionSortlocal(inputArray.slice(0));
 			},
             radixSort: function (inputArray,base) {
 			base = typeof base !== 'undefined' ? base : 10;
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with radixSort on Baase ",base);
-        		  return radixSortlocal(inputArray,code[2],base);
+        		  return radixSortlocal(inputArray.slice(0),code['length'],base);
 			},
             countingSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with countingSort");
-        		  return countingSortMain(inputArray,code[0]);
+        		  return countingSortMain(inputArray.slice(0),code[0]);
 			},
             beadSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with beadSort");
-        		  return beadSortlocal(inputArray,code['length']);   // code[2] inputArray.lenght  code[0] maximum 
+        		  return beadSortLocal(inputArray.slice(0),code['length']);   // code[2] inputArray.lenght  code[0] maximum 
 			},
             gravitySort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with beadSort or gravitySort");
-        		  return beadSortlocal(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
+        		  return beadSortLocal(inputArray.slice(0),code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
             timSort: function () {
             RUN = typeof RUN !== 'undefined' ? RUN : 32;
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with TimSort");
-        		  return timSortlocal(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
+        		  return timSortlocal(inputArray.slice(0),code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
             selectionSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with SelectionSort");
-        		  return selectionSortlocal(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
+        		  return selectionSortlocal(inputArray.slice(0),code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
             shellSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with Shell Sort");
-        		  return shellSortlocal(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
+        		  return shellSortlocal(inputArray.slice(0),code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
             bubbleSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with Bubble Sort");
-        		  return bubbleSortLocal(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
+        		  return bubbleSortLocal(inputArray.slice(0),code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
             bubbleSortOptimized: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with Bubble Sort Optimized");
-        		  return bubbleSortLocalOptimized(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
+        		  return bubbleSortLocalOptimized(inputArray.slice(0),code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
             cocktailSort: function () {
             if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with Cocktail Sort");
-        		  return cocktailSortLocal(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
+        		  return cocktailSortLocal(inputArray.slice(0),code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
             heapSort: function () {
-            if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with Cocktail Sort");
-        		  return heapSortLocal(inputArray,code['length']);  // code[2] inputArray.lenght  code[0] maximum 
+            if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with HeapSort or Cocktail Sort");
+        		  return heapSortLocal(inputArray.slice(0),code['length']);  // code[2] inputArray.lenght  code[0] maximum 
 			},
 			      defaultSort:function () {
+			        var inputArrayLocal = inputArray.slice(0);
               if (displaymode=="Yes") console.log("Sorting Array",inputArray,"with default Javascript Sorting!");
-        		  return inputArray.sort(sortNumber);
+        		  return inputArrayLocal.sort(sortNumber);
 			}
     });
   }
@@ -158,7 +169,7 @@ getArrayInfo = function(input)
   var arrlen = input.length;
   var max = input[0];
   var min = input[0];
-  for (i = 1; i < input.length; i++) {
+  for (var i = 1; i < input.length; i++) {
     if (max < input[i]) {
       max = input[i];
     }
@@ -192,6 +203,18 @@ swap = function(a, b)
 }
 
 
+// Helper function
+function clamp(num, min, max) {
+    return Math.min(Math.max(num, min), max);
+};
+
+// The padding function
+function addLeftPad(userString,num) {
+    return " ".repeat(clamp(num - userString.length, 0, num)) + userString;
+}
+
+// Helper function to to determine if a number is odd 
+function isOdd(num) { return num % 2;}
 
 /*
  * Tim sort algorithm !
@@ -216,18 +239,18 @@ swap = function(a, b)
 timSortlocal = function(input, n)
 {
     // Sort individual subarrays of size RUN
-    for (i = 0; i < n; i+=RUN)
+    for (var i = 0; i < n; i+=RUN)
         input = insertionSortTim(input, i, Math.min((i+31), (n-1)));
  
     // start merging from size RUN (or 32). It will merge
     // to form size 64, then 128, 256 and so on ....
-    for (size = RUN; size < n; size = 2*size)
+    for (var size = RUN; size < n; size = 2*size)
     {
         // pick starting point of left sub array. We
         // are going to merge input[left..left+size-1]
         // and input[left+size, left+2*size-1]
         // After every merge, we increase left by 2*size
-        for (left = 0; left < n; left += 2*size)
+        for (var left = 0; left < n; left += 2*size)
         {
             // find ending point of left sub array
             // mid+1 is starting point of right sub array
@@ -245,7 +268,7 @@ timSortlocal = function(input, n)
 
 insertionSortTim = function(input, left, right)
 {
-    for (i = left + 1; i <= right; i++)
+    for (var i = left + 1; i <= right; i++)
     {
         var temp = input[i];
         var j = i - 1;
@@ -296,9 +319,9 @@ merge = function(arr,l,m,r)
     var R = new Array(n2);
  
     /* Copy data to temp arrays L[] and r[] */
-    for (i = 0; i < n1; i++)
+    for (var i = 0; i < n1; i++)
         L[i] = arr[l + i];
-    for (j = 0; j < n2; j++)
+    for (var j = 0; j < n2; j++)
         R[j] = arr[m + 1+ j];
  
     /* Merge the temp arrays back into arr[l..r]*/
@@ -365,7 +388,7 @@ mergeSortLocal = function(arr,l,r)
 printArray = function(a,size)
 {
     var i;
-    for (i=0; i < size; i++)
+    for (var i=0; i < size; i++)
         console.log(a[i]);
     console.log("\n");
 }
@@ -403,7 +426,7 @@ mergeSort3WayLocal = function(gArray)
          if (displaymode == "Yes") console.log("\nlet satrt with empty array ",fArray);
         // copying alements of given array into
         // duplicate array
-        for (i = 0; i < fArray.length; i++)
+        for (var i = 0; i < fArray.length; i++)
             fArray[i] = gArray[i];
  
          if (displaymode == "Yes") console.log("\nNow it has been copied with input array ",fArray);
@@ -414,7 +437,7 @@ mergeSort3WayLocal = function(gArray)
         if (displaymode == "Yes") console.log("\nHere you are sorted Array : ",fArray);
         // copy back elements of duplicate array
         // to given array
-        for (i = 0; i < fArray.length; i++)
+        for (var i = 0; i < fArray.length; i++)
             gArray[i] = fArray[i];
             
     return  fArray;       
@@ -467,76 +490,472 @@ mergeSort3WayRec = function(gArray, low, high, destArray)
    midpoint index in overall range to merge*/
 merge3 = function(gArray, low, mid1, mid2, high, destArray)
     {
-        var i = low , l = low , j = mid1 , k = mid2 ; 
+        var i_low = low , l_low = low , j_mid1 = mid1 , k_mid2 = mid2 ; 
         if (displaymode == "Yes") console.log("         merege: low mid1 mid2 high: ",low, mid1,mid2,high);
         // choose smaller of the smallest in the three ranges
-        while ((i < mid1) && (j < mid2) && (k < high))
+        while ((i_low < mid1) && (j_mid1 < mid2) && (k_mid2 < high))
         {
-//            if (gArray[i].compareTo(gArray[j]) < 0)
-            if (gArray[i] <  gArray[j])
+//            if (gArray[i_low].compareTo(gArray[j_mid1]) < 0)
+            if (gArray[i_low] <  gArray[j_mid1])
             {
-//                if (gArray[i].compareTo(gArray[k]) < 0)
-                if (gArray[i] <  gArray[k])
-                    destArray[l++] = gArray[i++];
+//                if (gArray[i].compareTo(gArray[k_mid2]) < 0)
+                if (gArray[i_low] <  gArray[k_mid2])
+                    destArray[l_low++] = gArray[i_low++];
  
                 else
-                    destArray[l++] = gArray[k++];
+                    destArray[l_low++] = gArray[k_mid2++];
             }
             else
             {
-//                if (gArray[j].compareTo(gArray[k]) < 0)
-                if (gArray[j] <  gArray[k])
-                    destArray[l++] = gArray[j++];
+//                if (gArray[j_mid1].compareTo(gArray[k_mid2]) < 0)
+                if (gArray[j_mid1] <  gArray[k_mid2])
+                    destArray[l_low++] = gArray[j_mid1++];
                 else
-                    destArray[l++] = gArray[k++];
+                    destArray[l_low++] = gArray[k_mid2++];
             }
         }
  
         // case where first and second ranges have
         // remaining values
-        while ((i < mid1) && (j < mid2))
+        while ((i_low < mid1) && (j_mid1 < mid2))
         {
-  //          if (gArray[i].compareTo(gArray[j]) < 0)
-            if (gArray[i] <  gArray[j])
-                destArray[l++] = gArray[i++];
+  //          if (gArray[i_low].compareTo(gArray[j_mid1]) < 0)
+            if (gArray[i_low] <  gArray[j_mid1])
+                destArray[l_low++] = gArray[i_low++];
             else
-                destArray[l++] = gArray[j++];
+                destArray[l_low++] = gArray[j_mid1++];
         }
  
         // case where second and third ranges have
         // remaining values
-        while ((j < mid2) && (k < high))
+        while ((j_mid1 < mid2) && (k_mid2 < high))
         {
-//            if (gArray[j].compareTo(gArray[k]) < 0)
-            if (gArray[j] <  gArray[k])
-                destArray[l++] = gArray[j++];
+//            if (gArray[j_mid1].compareTo(gArray[k_mid2]) < 0)
+            if (gArray[j_mid1] <  gArray[k_mid2])
+                destArray[l_low++] = gArray[j_mid1++];
  
             else
-                destArray[l++] = gArray[k++];
+                destArray[l_low++] = gArray[k_mid2++];
         }
  
         // case where first and third ranges have
         // remaining values
-        while ((i < mid1) && (k < high))
+        while ((i_low < mid1) && (k_mid2 < high))
         {
-//            if (gArray[i].compareTo(gArray[k]) < 0)
-            if (gArray[i] <  gArray[k])
-                destArray[l++] = gArray[i++];
+//            if (gArray[i_low].compareTo(gArray[k_mid2]) < 0)
+            if (gArray[i_low] <  gArray[k_mid2])
+                destArray[l_low++] = gArray[i_low++];
             else
-                destArray[l++] = gArray[k++];
+                destArray[l_low++] = gArray[k_mid2++];
         }
  
         // copy remaining values from the first range
-        while (i < mid1)
-            destArray[l++] = gArray[i++];
+        while (i_low < mid1)
+            destArray[l_low++] = gArray[i_low++];
  
         // copy remaining values from the second range
-        while (j < mid2)
-            destArray[l++] = gArray[j++];
+        while (j_mid1 < mid2)
+            destArray[l_low++] = gArray[j_mid1++];
  
         // copy remaining values from the third range
-        while (k < high)
-            destArray[l++] = gArray[k++];
+        while (k_mid2 < high)
+            destArray[l_low++] = gArray[k_mid2++];
+    
+      
+    return destArray;  
+    }
+
+
+/*
+ * Merge Sort algorithm (3 Way)!
+ * Class	Sorting algorithm
+ * Data structure	Array
+ * Category : Comparison sorts.
+ * Worst-case performance	O(nLogn) 
+ * Best-case performance	O(n log n) typical, O(n) natural variant 
+ * Average performance	O(nLogn)
+ * Worst-case space complexity  О(n) total, O(n) auxiliary
+ *   where n is the size of the input array.
+ *   input array elements could be negative/positive and also integer or float .
+ *   Note: there are another kind of Merg sort by the name of 3-way Merge Sort . 
+ *         Merge sort involves recursively splitting the array into 2 parts, sorting and finally merging them. 
+ *         A variant of merge sort is called 3-way merge sort where instead of splitting the array into 2 parts 
+ *         we split it into 3 parts.
+ *         Merge sort recursively breaks down the arrays to subarrays of size half. Similarly, 
+ *         3-way Merge sort breaks down the arrays to subarrays of size one third.
+ *
+ * Author: Pooya Hatami
+ */
+
+// Function mergeSortKWay  for K-way merge sort process    
+mergeSortKWayLocal = function(gArray,kWay)
+    {
+        // kWay atleast should be biger than 2 
+        kWay =  ( typeof kWay !== 'undefined' && kWay >= 2 ) ? kWay :  2 ;
+        // if array of size is zero returns null
+        if (gArray == null)
+            return;
+        // creating duplicate of given array
+        fArray = new Array(gArray.length);
+ 
+         if (displaymode == "Yes") console.log("\nlet satrt with empty array ",fArray);
+        // copying alements of given array into
+        // duplicate array
+        for (var i = 0; i < fArray.length; i++)
+            fArray[i] = gArray[i];
+ 
+         if (displaymode == "Yes") console.log("\nNow it has been copied with input array ",fArray);
+
+        // sort function
+        mergeSortKWayRec(fArray, 0, gArray.length, kWay, gArray);
+
+        if (displaymode == "Yes") console.log("\nHere you are sorted Array : ",fArray);
+        // copy back elements of duplicate array
+        // to given array
+        for (var i = 0; i < fArray.length; i++)
+            gArray[i] = fArray[i];
+            
+    return  fArray;       
+    }
+ 
+/* Performing the merge sort algorithm on the
+   given array of values in the rangeof indices
+   [low, high).  low is minimum index, high is
+   maximum index (exclusive) */
+mergeSortKWayRec = function(gArray, low, high, kWay , destArray)
+    {
+        //if (displaymode == "Yes") console.log("Rec; Sorting; ",(high-low)," = (",high,"-",low,")");
+
+        // If array size is 1 then do nothing
+        //console.log(high,low,kWay-1);
+        if ( (high - low) < (kWay-1) )
+            return gArray;
+ 
+        midArr = new Array(kWay);
+        midArr[0]=low;
+        // Splitting array into 3 parts
+        for(var k_index=1 ; k_index< kWay ; k_index++){
+          midArr[k_index] = Math.floor(low + k_index * Math.floor((high - low) / kWay) + (k_index-1));
+        }
+        midArr[kWay]=high;
+
+        // mid1 = Math.floor(low + Math.floor((high - low) / 3));
+        // mid2 = Math.floor(low + 2 * Math.floor((high - low) / 3) + 1);
+        if (displaymode == "Yes") console.log("Recursively sort : low midArr high: ",low, midArr ,high);
+
+        // Sorting kWay arrays recursively
+        var padBef = "    " ;
+        for(var k_loop=0 ; k_loop< kWay ; k_loop++){
+                  padBef = addLeftPad(padBef,kWay);
+                  if (displaymode == "Yes") console.log(padBef+"  part "+k_loop+"; ",midArr[k_loop], midArr[k_loop+1]);
+           var midArrMemory = midArr.slice(0);
+          // i0=midArr[0] ;   
+          // i1=midArr[1] ;   
+          // i2=midArr[2] ;   
+          // i3=midArr[3] ;   
+           mergeSortKWayRec(destArray, midArr[k_loop], midArr[k_loop+1], kWay , gArray);
+           midArr = midArrMemory.slice(0); 
+
+//                  if (displaymode == "Yes") console.log(padBef+"  part "+k+"; ",midArr,midArrMemory,kWay);
+          // midArr[0] =i0 ;   
+          // midArr[1] =i1 ;   
+          // midArr[2] =i2 ;   
+          // midArr[3] =i3 ;   
+        }
+        // if (displaymode == "Yes") console.log("  part 1; ",low, mid1);
+        //   var lowMemory = low , mid1Memory = mid1 , mid2Memory = mid2 , highMemory = high ; 
+        // mergeSort3WayRec(destArray, low, mid1, gArray);
+        //   low = lowMemory , mid1 =  mid1Memory ,  mid2 =  mid2Memory ,  high = highMemory ;
+
+        // if (displaymode == "Yes") console.log("    part 2;",mid1, mid2);
+        //   var lowMemory = low , mid1Memory = mid1 , mid2Memory = mid2 , highMemory = high ; 
+        // mergeSort3WayRec(destArray, mid1, mid2, gArray);
+        //   low = lowMemory , mid1 =  mid1Memory ,  mid2 =  mid2Memory ,  high = highMemory ;
+
+        // if (displaymode == "Yes") console.log("      part 3;",mid2, high);
+        //   var lowMemory = low , mid1Memory = mid1 , mid2Memory = mid2 , highMemory = high ; 
+        // mergeSort3WayRec(destArray, mid2, high, gArray);
+        //   low = lowMemory , mid1 =  mid1Memory ,  mid2 =  mid2Memory ,  high = highMemory ;
+ 
+        // Merging the sorted arrays
+       var midArrMemory = midArr.slice(0);
+        mergeKWay(destArray, midArr , kWay , gArray);
+       midArr = midArrMemory.slice(0); 
+
+      return destArray;
+    }
+ 
+/* Merge the sorted ranges [low, mid1), [mid1,
+   mid2) and [mid2, high) mid1 is first midpoint
+   index in overall range to merge mid2 is second
+   midpoint index in overall range to merge*/
+mergeKWay = function(gArray, midArr , kWay, destArray)
+    {
+        var i_midArr = midArr.slice(0);; 
+        var des_midArr = midArr.slice(0);; 
+        var des_low = midArr[0];
+//        var i_low = low , des_low = low , j_mid1 = mid1 , k_mid2 = mid2 ; 
+        if (displaymode == "Yes") console.log("         merege: midArr : ",midArr);
+        // choose smaller of the smallest in the kWay ranges
+
+//         var whileCondition = true;
+//         while (whileCondition)
+// //        while ((i_low < mid1) && (j_mid1 < mid2) && (k_mid2 < high))
+//         {
+
+//             var smallest_i = 0 ; 
+//             for (i=0 ; i<kWay-1 ; i++) {
+//               if (gArray[i_midArr[smallest_i]] <  gArray[i_midArr[i+1]]) smallest_i = i;
+//               else smallest_i= i+1;
+//             }
+//             destArray[des_low++] = gArray[i_midArr[smallest_i]];
+//             i_midArr[smallest_i]++;
+
+// // //            if (gArray[i_low].compareTo(gArray[j_mid1]) < 0)
+// //             if (gArray[i_low] <  gArray[j_mid1])
+// //             {
+// // //                if (gArray[i].compareTo(gArray[k_mid2]) < 0)
+// //                 if (gArray[i_low] <  gArray[k_mid2])
+// //                     destArray[des_low++] = gArray[i_low++];
+ 
+// //                 else
+// //                     destArray[des_low++] = gArray[k_mid2++];
+// //             }
+// //             else
+// //             {
+// // //                if (gArray[j_mid1].compareTo(gArray[k_mid2]) < 0)
+// //                 if (gArray[j_mid1] <  gArray[k_mid2])
+// //                     destArray[des_low++] = gArray[j_mid1++];
+// //                 else
+// //                     destArray[des_low++] = gArray[k_mid2++];
+// //             }
+
+//           for (i=0; i<kWay;i++){
+//             if (i_midArr[i]>=midArr[i+1]) whileCondition = false
+//           }
+
+//         }
+
+
+
+        var i_midArr_full = new Array(kWay).fill(0);
+
+        var smallest_i = 0;
+        for ( var k_rep=0 ; k_rep< kWay ; k_rep++) {
+        if (displaymode == "Yes") console.log("         merege: i_midArr_full : ",i_midArr_full);
+        var whileCondition = true;
+        while (whileCondition)
+//        while ((i_low < mid1) && (j_mid1 < mid2) && (k_mid2 < high))
+        {
+            var steps = 1;
+            var smallest_i = 0;
+            for (var i=0 ; i<kWay-1 ; i++) {
+              //console.log(smallest_i, i , steps);
+              smallest_i = smallest_i + i_midArr_full[i];
+              if (i_midArr[i]<midArr[i+1]) {
+                if (gArray[i_midArr[smallest_i]] <  gArray[i_midArr[i+steps+i_midArr_full[i]]]) smallest_i = i;
+                else smallest_i= i+steps+i_midArr_full[i];                
+              } else {
+//                smallest_i = ( smallest_i == i ) ? i+steps+i_midArr_full[i] :  smallest_i ;
+                smallest_i = smallest_i +i_midArr_full[i] ;
+              }
+              //steps++;
+            }
+            destArray[des_low++] = gArray[i_midArr[smallest_i]++];
+            i_midArr[smallest_i]++;
+
+// //            if (gArray[i_low].compareTo(gArray[j_mid1]) < 0)
+//             if (gArray[i_low] <  gArray[j_mid1])
+//             {
+// //                if (gArray[i].compareTo(gArray[k_mid2]) < 0)
+//                 if (gArray[i_low] <  gArray[k_mid2])
+//                     destArray[des_low++] = gArray[i_low++];
+ 
+//                 else
+//                     destArray[des_low++] = gArray[k_mid2++];
+//             }
+//             else
+//             {
+// //                if (gArray[j_mid1].compareTo(gArray[k_mid2]) < 0)
+//                 if (gArray[j_mid1] <  gArray[k_mid2])
+//                     destArray[des_low++] = gArray[j_mid1++];
+//                 else
+//                     destArray[des_low++] = gArray[k_mid2++];
+//             }
+
+          for (var i=0; i<=kWay;i++){
+            if (i_midArr[i]>=midArr[i+1] ) {
+                whileCondition = false
+                i_midArr_full[i] = 1;
+              }
+          }
+          
+        } //while (whileCondition)
+          
+        } //for ( k_rep
+
+
+
+//         var i_midArr_full = new Array(kWay).fill(false);
+
+//         var smallest_i = 0;
+//         for ( var k_rep=0 ; k_rep< kWay ; k_rep++) {
+//         if (displaymode == "Yes") console.log("         merege: i_midArr_full : ",i_midArr_full);
+//         var whileCondition = true;
+//         while (whileCondition)
+// //        while ((i_low < mid1) && (j_mid1 < mid2) && (k_mid2 < high))
+//         {
+//             var steps = 1;
+//             for (var i=0 ; i<kWay-1 ; i++) {
+//               //console.log(smallest_i, i , steps);
+//               if (i_midArr[i]<midArr[i+1]) {
+//                 if (gArray[i_midArr[smallest_i]] <  gArray[i_midArr[i+steps]]) smallest_i = i;
+//                 else smallest_i= i+steps;                
+//               } else {
+//                 smallest_i = ( smallest_i == i ) ? i+steps :  smallest_i ;
+//               }
+//               //steps++;
+//             }
+//             destArray[des_low++] = gArray[i_midArr[smallest_i]++];
+//             i_midArr[smallest_i]++;
+
+// // //            if (gArray[i_low].compareTo(gArray[j_mid1]) < 0)
+// //             if (gArray[i_low] <  gArray[j_mid1])
+// //             {
+// // //                if (gArray[i].compareTo(gArray[k_mid2]) < 0)
+// //                 if (gArray[i_low] <  gArray[k_mid2])
+// //                     destArray[des_low++] = gArray[i_low++];
+ 
+// //                 else
+// //                     destArray[des_low++] = gArray[k_mid2++];
+// //             }
+// //             else
+// //             {
+// // //                if (gArray[j_mid1].compareTo(gArray[k_mid2]) < 0)
+// //                 if (gArray[j_mid1] <  gArray[k_mid2])
+// //                     destArray[des_low++] = gArray[j_mid1++];
+// //                 else
+// //                     destArray[des_low++] = gArray[k_mid2++];
+// //             }
+
+//           for (var i=0; i<=kWay;i++){
+//             if (i_midArr[i]>=midArr[i+1] ) {
+//                 whileCondition = false
+//               }
+//           }
+//         } //while (whileCondition)
+          
+//         } //for ( k_rep
+
+
+
+
+// 3   3   2+1          1-2-3  1-2   1-3   2-3
+// 4   6   3+2+1        1-2-3  2-3-4  1-2   1-3   1-4   2-3   2-4   3-4 
+// 5   10  4+3+2+1      1-2-3-4  2-3-4-5  1-2-3  2-3-4  3-4-5  1-2   1-3   1-4   1-5   2-3   2-4   2-5   3-4   3-5   4-5  
+// 6   15  5+4+3+2+1    1-2   1-3   1-4   1-5   1-6   2-3   2-4   2-5   2-6   3-4   3-5   3-6   4-5    4-6    5-6
+// 7   21  6+5+4+3+2+1  1-2   1-3   1-4   1-5   1-6   1-7   2-3   2-4   2-5   2-6   2-7   3-4   3-5    3-6    3-7    4-5   4-6    4-7    5-6    5-7     6-7
+
+
+
+// 3   3   2+1          3 * [1]-2-3    1-2-[3]    1-[2]-3 
+// 4   6   3+2+1        4 * [1]-2-3-4  1-2-3-[4]  1-2-[3]-4  1-[2]-3-4
+// 5   10  4+3+2+1      5 * 1-2-3-4-5  1-2-3-4-5  1-2-3-4-5  1-2-3-4-5
+// 6   15  5+4+3+2+1    6 * 1-2-3-4-5-6  1-2-3-4-5-6  1-2-3-4-5-6  1-2-3-4-5-6  1-2-3-4-5-6
+// 7   21  6+5+4+3+2+1  7 * 1-2-3-4-5-6-7 
+
+
+
+//             for (i_sublooplog = kWay ; i_loopsublog > 0 ; i_loopsublog--) 
+//             {
+//                 for (i_subsublooplog = 0 ; i_subsublooplog < kWay-i_sublooplog ; i_subsublooplog++) 
+//                 {
+//                     var whileCondition = true;
+//                     while (whileCondition)
+//               //        while ((i_low < mid1) && (j_mid1 < mid2) && (k_mid2 < high))
+//                     {
+              
+//                         var smallest_i = i_subsublooplog ; 
+//                         for (i=i_subsublooplog ; i<i_sublooplog-1 ; i++) {
+//                           if (gArray[i_midArr[smallest_i]] <  gArray[i_midArr[i+1]]) smallest_i = i;
+//                           else smallest_i= i+1;
+//                         }
+//                         destArray[des_low++] = gArray[i_midArr[smallest_i]];
+//                         i_midArr[smallest_i]++;
+              
+//               // //            if (gArray[i_low].compareTo(gArray[j_mid1]) < 0)
+//               //             if (gArray[i_low] <  gArray[j_mid1])
+//               //             {
+//               // //                if (gArray[i].compareTo(gArray[k_mid2]) < 0)
+//               //                 if (gArray[i_low] <  gArray[k_mid2])
+//               //                     destArray[des_low++] = gArray[i_low++];
+              
+//               //                 else
+//               //                     destArray[des_low++] = gArray[k_mid2++];
+//               //             }
+//               //             else
+//               //             {
+//               // //                if (gArray[j_mid1].compareTo(gArray[k_mid2]) < 0)
+//               //                 if (gArray[j_mid1] <  gArray[k_mid2])
+//               //                     destArray[des_low++] = gArray[j_mid1++];
+//               //                 else
+//               //                     destArray[des_low++] = gArray[k_mid2++];
+//               //             }
+              
+//                       for (i=i_subsublooplog ; i<i_sublooplog;i++){
+//                         if (i_midArr[i]>=midArr[i+1]) whileCondition = false
+//                       }
+        
+//                     } //while (whileCondition)
+//                 } //for (i_subsublooplog
+//             } //for (i_sublooplog
+
+ 
+//         // case where first and second ranges have
+//         // remaining values
+//         while ((i_low < mid1) && (j_mid1 < mid2))
+//         {
+//   //          if (gArray[i_low].compareTo(gArray[j_mid1]) < 0)
+//             if (gArray[i_low] <  gArray[j_mid1])
+//                 destArray[des_low++] = gArray[i_low++];
+//             else
+//                 destArray[des_low++] = gArray[j_mid1++];
+//         }
+ 
+//         // case where second and third ranges have
+//         // remaining values
+//         while ((j_mid1 < mid2) && (k_mid2 < high))
+//         {
+// //            if (gArray[j_mid1].compareTo(gArray[k_mid2]) < 0)
+//             if (gArray[j_mid1] <  gArray[k_mid2])
+//                 destArray[des_low++] = gArray[j_mid1++];
+ 
+//             else
+//                 destArray[des_low++] = gArray[k_mid2++];
+//         }
+ 
+//         // case where first and third ranges have
+//         // remaining values
+//         while ((i_low < mid1) && (k_mid2 < high))
+//         {
+// //            if (gArray[i_low].compareTo(gArray[k_mid2]) < 0)
+//             if (gArray[i_low] <  gArray[k_mid2])
+//                 destArray[des_low++] = gArray[i_low++];
+//             else
+//                 destArray[des_low++] = gArray[k_mid2++];
+//         }
+ 
+//         // copy remaining values from the first range
+//         while (i_low < mid1)
+//             destArray[des_low++] = gArray[i_low++];
+ 
+//         // copy remaining values from the second range
+//         while (j_mid1 < mid2)
+//             destArray[des_low++] = gArray[j_mid1++];
+ 
+//         // copy remaining values from the third range
+//         while (k_mid2 < high)
+//             destArray[des_low++] = gArray[k_mid2++];
     
       
     return destArray;  
@@ -563,20 +982,20 @@ merge3 = function(gArray, low, mid1, mid2, high, destArray)
 
 // Function to sort input[] of size n using bucket sort
 // for positive float numbers  
-beadSortLocal = function(input,code)
+beadSortLocalBucket = function(input,code)
 {
     // 1) Create n empty buckets
     //vector<float> b[n];
     var maxelement = code[0];
     var ibucket = code[1];
     var arrlen  = code[2];
-    if (displaymode == "Yes") console.log(input,ibucket,arrlen,code);
+    if (displaymode == "Yes") console.log("beadSortLocalBucket",input,ibucket,arrlen,code);
     var b = new Array(ibucket);
-    for (i=0; i<ibucket; i++)
+    for (var i=0; i<ibucket; i++)
          b[i]= new Array();
     if (displaymode == "Yes") console.log("empty buckets ",b);
     // 2) Put array elements in different buckets
-    for (i=0; i<arrlen; i++)
+    for (var i=0; i<arrlen; i++)
     {
        var bi = indexmaker(input[i],code); // Index in bucket
        if (displaymode == "Yes") console.log(input[i]," in bucket "+bi);
@@ -585,7 +1004,7 @@ beadSortLocal = function(input,code)
     
     if (displaymode == "Yes") console.log("full buckets befor sort :\n",b);
     // 3) Sort individual buckets
-    for (i=0; i<ibucket; i++) {
+    for (var i=0; i<ibucket; i++) {
          if (displaymode == "Yes") console.log("bucket "+ i +" befor sort : "+b[i]);
          //b[i].sort(sortNumber);
          b[i] = insertionSortlocal(b[i]);   // sorting each bucket with insertionSort 
@@ -595,8 +1014,8 @@ beadSortLocal = function(input,code)
 
     // 4) Concatenate all buckets into input[]
     var index = 0;
-    for (i = 0; i < ibucket; i++)
-        for (j = 0; j < b[i].length; j++)
+    for (var i = 0; i < ibucket; i++)
+        for (var j = 0; j < b[i].length; j++)
           input[index++] = b[i][j];
 
   return input;
@@ -615,15 +1034,15 @@ indexmaker = function(oneinputcell,code)
 // for float numbers between 0 to 1
 beadSortLocalfractions = function(input,ibucket,arrlen)
 {
-   if (displaymode == "Yes") console.log(input,ibucket,arrlen);
+   if (displaymode == "Yes") console.log("fractions",input,ibucket,arrlen);
     // 1) Create n empty buckets
     //vector<float> b[n];
     var b = new Array(ibucket);
-    for (i=0; i<ibucket; i++)
+    for (var i=0; i<ibucket; i++)
          b[i]= new Array();
     if (displaymode == "Yes") console.log("empty fractions buckets ",b);
     // 2) Put array elements in different buckets
-    for (i=0; i<arrlen; i++)
+    for (var i=0; i<arrlen; i++)
     {
        var bi = Math.floor(ibucket*input[i]); // Index in bucket
        if (displaymode == "Yes") console.log(input[i]," in bucket "+bi);
@@ -632,7 +1051,7 @@ beadSortLocalfractions = function(input,ibucket,arrlen)
     
     if (displaymode == "Yes") console.log("full buckets befor sort :\n", b);
     // 3) Sort individual buckets
-    for (i=0; i<ibucket; i++) {
+    for (var i=0; i<ibucket; i++) {
          if (displaymode == "Yes") console.log("bucket "+ i +" befor sort : "+b[i]);
          b[i].sort();
          if (displaymode == "Yes") console.log("bucket "+ i +" after sort : "+b[i]);
@@ -642,8 +1061,8 @@ beadSortLocalfractions = function(input,ibucket,arrlen)
  
     // 4) Concatenate all buckets into input[]
     var index = 0;
-    for (i = 0; i < ibucket; i++)
-        for (j = 0; j < b[i].length; j++)
+    for (var i = 0; i < ibucket; i++)
+        for (var j = 0; j < b[i].length; j++)
           input[index++] = b[i][j];
 
   return input;
@@ -671,7 +1090,7 @@ beadSortLocalfractions = function(input,ibucket,arrlen)
 insertionSortlocal = function(input) {
 
         var n = input.length;
-        for (i=1; i<n; ++i)
+        for (var i=1; i<n; ++i)
         {
             var key = input[i];
             var j = i-1;
@@ -726,19 +1145,19 @@ countingSortMain = function(input,maxrange) {
         var count = new ArrayBuffer(maxrange);
 //      var count =  [maxrange];
   
-        for (i=0; i<maxrange; ++i)
+        for (var i=0; i<maxrange; ++i)
             count[i] = 0;
         // store count of each character
-        for (i=0; i<n; ++i)
+        for (var i=0; i<n; ++i)
             ++count[input[i]];
         
         // Change count[i] so that count[i] now contains actual
         // position of this character in output array
-        for (i=1; i<=maxrange; ++i)
+        for (var i=1; i<=maxrange; ++i)
             count[i] += count[i-1];
 
         // Build the output character array
-        for (i = 0; i<n; ++i)
+        for (var i = 0; i<n; ++i)
         {
             output[count[input[i]]-1] = input[i];
             --count[input[i]];
@@ -746,7 +1165,7 @@ countingSortMain = function(input,maxrange) {
  
         // Copy the output array to input, so that input now
         // contains sorted characters
-        for (i = 0; i<n; ++i)
+        for (var i = 0; i<n; ++i)
             input[i] = output[i];
 
       return input;
@@ -788,7 +1207,7 @@ radixSortlocal = function(inputArr,arrLen,base)
 	// Do counting sort for every digit. Note that instead
 	// of passing digit number, place is passed. place is base^i
 	// where i is current digit number
-	for(place=1; place <= m; place *= 10){
+	for(var place=1; place <= m; place *= 10){
 		// Use counting sort at each digit's place
 		inputArr = countingSortlocal(inputArr, arrLen , place , base);
 		//console.log(inputArr);   
@@ -805,12 +1224,12 @@ countingSortlocal = function(input,arrLen,exp,base) {
   var output = [arrLen];
   var count = [base], i;
    // set all elemt to zero memset(count, 0, base*sizeof(unsigned));
-   for (i = 0; i < 10; i++)
+   for (var i = 0; i < 10; i++)
 		count[i] = 0 ;
 		
 
   // count occurrence of each element 
-  for (i = 0; i < arrLen; i++) {
+  for (var i = 0; i < arrLen; i++) {
 	  var index_i = getIndexDigit(input[i], exp, base); // Math.floor
 	  count[index_i]++;
 
@@ -819,11 +1238,11 @@ countingSortlocal = function(input,arrLen,exp,base) {
   if (displaymode=="Yes") console.log("count ",count);
   // rearrange count[] so that it contains actual position of
   // each element in output[] 
-  for (i = 1; i < base; i++)
+  for (var i = 1; i < base; i++)
 	  count[i] += count[i-1];
   
   // NOTE: filling the output array in a reversed way 
-  for (i = arrLen-1; i >= 0 ; i--){
+  for (var i = arrLen-1; i >= 0 ; i--){
 		  var index_i = getIndexDigit(input[i], exp, base); //Math.floor
 		  output[--count[index_i]] = input[i];
   	      if (displaymode=="Yes") console.log("input[i] ",input[i]," index_i ",index_i," i ",i);
@@ -831,7 +1250,7 @@ countingSortlocal = function(input,arrLen,exp,base) {
 	  }
 
   // copy output[] into input[] 
-  for (i = 0; i < arrLen; i++) {
+  for (var i = 0; i < arrLen; i++) {
 		 input[i] = output[i];
 	  }
 	  
@@ -856,9 +1275,9 @@ return input;
  * Author: Pooya Hatami
  */
  
- // A function to do counting sort of input[] according to
+// A function to do counting sort of input[] according to
 // the digit represented by exp.
-beadSortlocal = function(input,arrLen) 
+beadSortLocal = function(input,arrLen) 
 {
   if (displaymode=="Yes") console.log("inputArray ",input," length ",arrLen," Maximum ",code['max']," minimum ",code['min']);
 
@@ -973,7 +1392,7 @@ partition  = function(arr, low, high)
     if (displaymode == "Yes") console.log("pivot : ",pivot , low , high );
     i = (low - 1);  // Index of smaller element
  
-    for (j = low; j <= high- 1; j++)
+    for (var j = low; j <= high- 1; j++)
     {
         // If current element is smaller than or
         // equal to pivot
@@ -1018,7 +1437,7 @@ quickSortlocal = function(arr, low, high)
 printArray = function(arr, size)
 {
     var i;
-    for (i=0; i < size; i++)
+    for (var i=0; i < size; i++)
         printf("%d ", arr[i]);
         console.log(" ",arr[i])
    // printf("n");
@@ -1098,13 +1517,13 @@ partition3Way = function(input, low, high, mid2, mid1)
     // Move all left same occurrences from beginning
     // to adjacent to arr[i]
     mid1 = mid2-1;
-    for (k = low; k < p; k++, mid1--)
+    for (var k = low; k < p; k++, mid1--)
         [input[k], input[mid1]] = swap(input[k], input[mid1]);
  
     // Move all right same occurrences from end
     // to adjacent to arr[i]
     mid2 = mid2+1;
-    for (k = high-1; k > q; k--, i++)
+    for (var k = high-1; k > q; k--, i++)
         [input[mid2], input[k]] = swap(input[mid2], input[k]);
         
         
@@ -1159,11 +1578,11 @@ selectionSortlocal = function(input, n)
     var i, j, min_idx;
  
     // One by one move boundary of unsorted subarray
-    for (i = 0; i < n-1; i++)
+    for (var i = 0; i < n-1; i++)
     {
         // Find the minimum element in unsorted array
         min_idx = i;
-        for (j = i+1; j < n; j++)
+        for (var j = i+1; j < n; j++)
           if (input[j] < input[min_idx])
             min_idx = j;
  
@@ -1199,7 +1618,7 @@ shellSortlocal = function(input, arrlen)
         //var arrlen = input.length;
         if (displaymode == "Yes") console.log(input,arrlen);  
         // Start with a big gap, then reduce the gap
-        for (gap = Math.floor(arrlen/2); gap > 0; Math.floor(gap /= 2))
+        for (var gap = Math.floor(arrlen/2); gap > 0; Math.floor(gap /= 2))
         {
             gap = Math.floor(gap);
             if (gap==0) break;
@@ -1207,7 +1626,7 @@ shellSortlocal = function(input, arrlen)
             // The first gap elements a[0..gap-1] are already
             // in gapped order keep adding one more element
             // until the entire array is gap sorted
-            for (i = gap; i < arrlen; i += 1)
+            for (var i = gap; i < arrlen; i += 1)
             {
                 if (displaymode == "Yes") console.log(gap,i,input[i]);
                 // add a[i] to the elements that have been gap
@@ -1218,7 +1637,7 @@ shellSortlocal = function(input, arrlen)
                 // shift earlier gap-sorted elements up until
                 // the correct location for a[i] is found
                 var j;
-                for (j = i; j >= gap && input[j - gap] > temp; j -= gap)
+                for (var j = i; j >= gap && input[j - gap] > temp; j -= gap)
                     input[j] = input[j - gap];
  
                 // put temp (the original a[i]) in its correct
@@ -1259,10 +1678,10 @@ bubbleSortLocal = function(input, arrLen)
    var i, j;
    if (displaymode == "Yes") console.log(input,arrLen);
    
-   for (i = 0; i < arrLen-1; i++)      
+   for (var i = 0; i < arrLen-1; i++)      
  
        // Last i elements are already in place   
-       for (j = 0; j < arrLen-i-1; j++) { 
+       for (var j = 0; j < arrLen-i-1; j++) { 
            if (input[j] > input[j+1]) {
               [input[j], input[j+1]] = swap(input[j], input[j+1]);
                if (displaymode == "Yes") console.log(i,j,input[j], input[j+1]);
@@ -1280,10 +1699,10 @@ bubbleSortLocalOptimized = function(input, arrLen)
    var swapped;  //bool
    if (displaymode == "Yes") console.log(input,arrLen,swapped);
 
-   for (i = 0; i < arrLen-1; i++)
+   for (var i = 0; i < arrLen-1; i++)
    {
      swapped = false;
-     for (j = 0; j < arrLen-i-1; j++)
+     for (var j = 0; j < arrLen-i-1; j++)
      {
         if (input[j] > input[j+1])
         {
@@ -1338,7 +1757,7 @@ cocktailSortLocal = function(input , arrLen)
  
             // loop from bottom to top same as
             // the bubble sort
-            for (i = start; i < end-1; ++i)
+            for (var i = start; i < end-1; ++i)
             {
                 if (input[i] > input[i + 1])
                 {
@@ -1365,7 +1784,7 @@ cocktailSortLocal = function(input , arrLen)
  
             // from top to bottom, doing the
             // same comparison as in the previous stage
-            for (i = end-1; i >=start; i--)
+            for (var i = end-1; i >=start; i--)
             {
                 if (input[i] > input[i+1])
                 {
@@ -1423,8 +1842,8 @@ heapify = function(input, arrLen, i)
     // If largest is not root
     if (largest != i)
     {
-        swap(input[i], input[largest]);
-        if (displaymode == "Yes") console.log(input[i],input[largest]);
+        [input[i], input[largest]] = swap(input[i], input[largest]);
+        if (displaymode == "Yes") console.log("  - swap",input[i],input[largest]);
  
         // Recursively heapify the affected sub-tree
         heapify(input, arrLen, largest);
@@ -1438,15 +1857,18 @@ heapSortLocal = function(input, arrLen)
 
 
     // Build heap (rearrange array)
-    for (var i = arrLen / 2 - 1; i >= 0; i--)
+    for (var i = Math.floor((arrLen / 2) - 1); i >= 0; i--){
         heapify(input, arrLen, i);
+        if (displaymode == "Yes") console.log("   rearrange",Math.floor((arrLen / 2) - 1),arrLen,i);
+      
+    }
  
     // One by one extract an element from heap
     for (var i=arrLen-1; i>=0; i--)
     {
         // Move current root to end
-        swap(input[0], input[i]);
-        
+        [input[0], input[i]] = swap(input[0], input[i]);
+        if (displaymode == "Yes") console.log("  -- swap",input[0],input[i]);
  
         // call max heapify on the reduced heap
         heapify(input, i, 0);
@@ -1460,43 +1882,6 @@ heapSortLocal = function(input, arrLen)
  
  TODO
  
- Introsort
- Odd–even sort
- Cycle sort
- Smoothsort
- Merge insertion (Ford-Johnson)
- sort Cubesort
- Binary tree sort
- Library sort
- Patience sorting
- Strand sort
- Tournament sort
- Comb sort
- Gnome sort
- UnShuffle Sort
- Block sort
- Franceschini's method  
-
-also : 
-  + Comparison sorts
- 
- 
-  + Non-comparison sorts
-        Pigeonhole sort
- 
- 
- * SelectionSort Sort !     
- * Class	Sorting algorithm
- * Data structure	Array
- * Worst-case performance	О(n^2) 
- * Best-case performance	О(n^2)
- * Average performance	О(n^2)
- * Worst-case space complexity О(n) total, O(1) auxiliary
- *   where n is the size of the input array.
- *   Note: Selection sort can also be used on list structures that make add and remove
- *         efficient, such as a linked list. In this case it is more common to remove
- *         the minimum element from the remainder of the list, and then insert it at
- *         the end of the values sorted so far. 
  *
  * Author: Pooya Hatami
  */
