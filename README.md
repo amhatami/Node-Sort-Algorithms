@@ -34,17 +34,9 @@ The output is a permutation (reordering) of the input.
  	 
 	 TODO .............................................
 	   **Comparison sorts**
-		Quick Sort
-		Merge Sort
-		In-place merge Sort
-		Heap Sort
-		Insertion Sort
 		Intro Sort
-		Selection Sort
-		Tim Sort
 		Cube Sort
-		Shell Sort
-		Bubble Sort
+		In-place merge Sort
 		Binary tree Sort
 		Cycle Sort
 		Library Sort
@@ -52,7 +44,6 @@ The output is a permutation (reordering) of the input.
 		Smooth Sort
 		Strand Sort
 		Tournament Sort
-		Cocktail Sort
 		Comb Sort
 		Gnome Sort
 		UnShuffle Sort[10]
@@ -63,7 +54,6 @@ The output is a permutation (reordering) of the input.
 		Pigeonhole Sort
 		Bucket Sort(uniform keys)
 		Bucket Sort(integer keys)
-		Counting Sort
 		LSD Radix Sort
 		MSD Radix Sort
 		MSD Radix Sort(in-place)
@@ -347,7 +337,7 @@ solveSorting(arrin17.slice(0),'mergeSort3Way', 3 );
 
   * **Counting Sort - .countingSort( array )**
 
-  * **Bucket Sort - .bucketSort( array )**
+  * **Bucket Sort (integer keys) - .bucketSort( array )**
 
   * **Bin Sort - .binSort( array )**
 
@@ -364,35 +354,57 @@ Coming soon :) !
 	 TODO .............................................
 	   **Comparison sorts**
 		Intro Sort
+		
 		Cube Sort
+		
 		Shell Sort
-		Bubble Sort
+		
 		In-place merge Sort
+		
 		Binary tree Sort
+		
 		Cycle Sort
+		
 		Library Sort
+		
 		Patience Sorting
+		
 		Smooth Sort
+		
 		Strand Sort
+		
 		Tournament Sort
-		Cocktail Sort
+		
 		Comb Sort
+		
 		Gnome Sort
+		
 		UnShuffle Sort[10]
+		
 		Franceschini method Sort
+		
 		Block Sort
+		
 		Odd-Even Sort
+		
 	   **Non-comparison sorts**
+	   
 		Pigeonhole Sort
+		
 		Bucket Sort(uniform keys)
-		Bucket Sort(integer keys)
-		Counting Sort
+		
 		LSD Radix Sort
+		
 		MSD Radix Sort
+		
 		MSD Radix Sort(in-place)
+		
 		Spread Sort
+		
 		Burst Sort
+		
 		Flash Sort
+		
 		Postman Sort
 
 
