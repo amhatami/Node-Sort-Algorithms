@@ -19,6 +19,36 @@
  *      Cocktail Sort
  *      Heap Sort
  *      
+ * 	... TODO .............................................
+ *	   **Comparison sorts**
+ *	Intro Sort
+ *	Cube Sort
+ *	In-place merge Sort
+ *	Binary tree Sort
+ *	Cycle Sort
+ *	Library Sort
+ *	Patience Sorting
+ *	Smooth Sort
+ *	Strand Sort
+ *	Tournament Sort
+ *	Comb Sort
+ *	Gnome Sort
+ *	UnShuffle Sort[10]
+ *	Franceschini method Sort
+ *	Block Sort
+ *	Odd-Even Sort
+ *   **Non-comparison sorts**
+ *	Pigeonhole Sort
+ *	Bucket Sort(uniform keys)
+ *	Bucket Sort(integer keys)
+ *	LSD Radix Sort
+ *	MSD Radix Sort
+ *	MSD Radix Sort(in-place)
+ *	Spread Sort
+ *	Burst Sort
+ *	Flash Sort
+ *	Postman Sort
+ *
  *      
  * Author: Amir Hatami
  */
@@ -1880,8 +1910,34 @@ heapSortLocal = function(input, arrLen)
 
 /*
  
- TODO
- 
- *
- * Author: Pooya Hatami
+ TODO .............................................
+   **Comparison sorts**
+	Intro Sort
+	Cube Sort
+	In-place merge Sort
+	Binary tree Sort
+	Cycle Sort
+	Library Sort
+	Patience Sorting
+	Smooth Sort
+	Strand Sort
+	Tournament Sort
+	Comb Sort
+	Gnome Sort
+	UnShuffle Sort[10]
+	Franceschini method Sort
+	Block Sort
+	Odd-Even Sort
+   **Non-comparison sorts**
+	Pigeonhole Sort
+	Bucket Sort(uniform keys)
+	Bucket Sort(integer keys)
+	LSD Radix Sort
+	MSD Radix Sort
+	MSD Radix Sort(in-place)
+	Spread Sort
+	Burst Sort
+	Flash Sort
+	Postman Sort
+		
  */
