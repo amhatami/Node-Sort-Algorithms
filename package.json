@@ -1,15 +1,30 @@
 {
   "name": "node-sort-algorithms",
+  "version": "1.1.5",
+  "author": "Amir Hatami <am.hatami@gmail.com>",
   "description": "A sorting library for Node.js &amp; javascript made based on well kown algorithmes included : Bead Sort , Gravity Sort , Bucket Sort , Bin Sort ,  Counting Sort , Insertion Sort , Merge Sort , Radix Sort",
-  "version": "1.0.4",
-  "repository": {
-    "url": "https://github.com/amhatami/Node-Sort-Algorithms"
+  "contributors": [],
+  "bin": {},
+  "scripts": {
+    "test": "test-Cases/*.js",
+    "minify": "node-sort-algorithms.min.js"
   },
   "main": "node-sort-algorithms.js",
-  "scripts": {
-    "test": "test-Cases/*.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amhatami/Node-Sort-Algorithms"
   },
-  "author": "Amir Hatami <am.hatami@gmail.com>",
+  "keywords": [
+    "math",
+    "sort",
+    "algorithms",
+    "node",
+    "string",
+    "integer",
+    "array",
+    "precision",
+    "arithmetic"
+  ],
   "dependencies": {},
   "devDependencies": {
     "tap": "~0.4.1"
